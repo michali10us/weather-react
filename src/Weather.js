@@ -52,9 +52,4 @@ export default function Weather() {
   } else {
     return form;
   }
-
-  <footer>
-    <a href="https://github.com/michali10us/weather-react">Open-sourced </a>
-    by Michal
-  </footer>;
 }
