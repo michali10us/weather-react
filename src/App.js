@@ -10,7 +10,7 @@ function App() {
 
         <footer>
           <a href="https://github.com/michali10us/weather-react">
-            Open-sourced{" "}
+            Open-sourced coded{" "}
           </a>
           by Michal
         </footer>
