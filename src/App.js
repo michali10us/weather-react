@@ -8,6 +8,11 @@ function App() {
         <p>Cheack the weather</p>
         <Weather />
       </header>
+
+      <footer>
+        <a href="https://github.com/michali10us/weather-react">Open-sourced </a>
+        by Michal
+      </footer>
     </div>
   );
 }
