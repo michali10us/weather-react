@@ -1,16 +1,21 @@
-/* import { upload } from "@testing-library/user-event/dist/upload";
-import { hasFormSubmit } from "@testing-library/user-event/dist/utils"; */
 import axios from "axios";
 import React, { useState } from "react";
+import "./App.css";
 
 export default function Weather() {
   let [loaded, upLoaded] = useState(false);
   let [search, newSearch] = useState("");
-  let [message, newMessage] = useState("");
+  let [message, newMessage] = useState({});
 
   function showWeather(response) {
     upLoaded(true);
-    newMessage(response.data.main.temp);
+
+    newMessage({
+      temp: response.data.main.temp,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      description: response.data.weather[0].description,
+      felllike: response.data.main.feels_like,
+    });
   }
   function hadelSubmit(event) {
     event.preventDefault();
@@ -23,30 +28,54 @@ export default function Weather() {
   }
 
   let form = (
-    <form className="row g-3 align-items-center" onSubmit={hadelSubmit}>
-      <div className="col-auto">
-        <input
-          type="search"
-          placeholder="Search a city"
-          onChange={handelChange}
-        />
-      </div>
-      <div className="col-auto">
-        <button type="submit" className="btn btn-primary btn-lg ">
-          Current location
-        </button>
-      </div>
-    </form>
+    <div className="container text-center mt-5">
+      <form className="form-inline" onSubmit={hadelSubmit}>
+        <div className="row">
+          <div className="col-7">
+            <input
+              type="search"
+              className="form-control"
+              placeholder="Search a city"
+              onChange={handelChange}
+            />
+          </div>
+          <div className="col-5">
+            <button type="submit" className="btn btn-primary ">
+              Current location
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 
   if (loaded) {
     return (
       <div>
         {form}
-
-        <h2>
-          The temperature in {search} is : {Math.round(message)}°C
-        </h2>
+        <div className="container text-center">
+          <div class="row mt-5">
+            <div class="col-sm-3 col-md-4"> {Math.round(message.temp)}°C</div>
+            <div class="col-sm-3 col-md-4">{search}</div>
+            <div className="col-sm-3 col-md-4 weather-img">
+              <img
+                src={message.icon}
+                width="50"
+                height="50"
+                alt="Weather icon"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-md-4">
+              {Math.round(message.felllike)}°C
+            </div>
+            <div class="col-sm-3 col-md-4">Last updated:</div>
+            <div class="col-sm-3 col-md-4">
+              Feels like:{message.description}
+            </div>
+          </div>
+        </div>
       </div>
     );
   } else {
