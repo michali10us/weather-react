@@ -3,13 +3,10 @@ import React, { useState } from "react";
 import "./App.css";
 
 export default function Weather() {
-  let [loaded, upLoaded] = useState(false);
   let [search, newSearch] = useState("");
   let [message, newMessage] = useState({});
 
   function showWeather(response) {
-    upLoaded(true);
-
     newMessage({
       temp: response.data.main.temp,
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -40,7 +37,7 @@ export default function Weather() {
             />
           </div>
           <div className="col-5">
-            <button type="submit" className="btn btn-primary ">
+            <button type="submit" className="btn btn-primary">
               Current location
             </button>
           </div>
@@ -49,15 +46,15 @@ export default function Weather() {
     </div>
   );
 
-  if (loaded) {
+  {
     return (
       <div>
         {form}
         <div className="container text-center">
           <div class="row mt-5 first-information">
-            <div class="col-sm-3 col-md-4"> {Math.round(message.temp)}°C</div>
-            <div class="col-sm-3 col-md-4">{search}</div>
-            <div className="col-sm-3 col-md-4 weather-img">
+            <div class="col-sm-4 col-md-4"> {Math.round(message.temp)}°C</div>
+            <div class="col-sm-4 col-md-4">{search}</div>
+            <div className="col-sm-4 col-md-4 weather-img">
               <img
                 src={message.icon}
                 width="50"
@@ -67,16 +64,14 @@ export default function Weather() {
             </div>
           </div>
           <div class="row mt-4 second-information">
-            <div class="col-sm-3 col-md-4">
+            <div class="col-sm-4 col-md-4">
               Fells like: {Math.round(message.felllike)}°C
             </div>
-            <div class="col-sm-3 col-md-4">Update time:</div>
-            <div class="col-sm-3 col-md-4">{message.description}</div>
+            <div class="col-sm-4 col-md-4">Update time:</div>
+            <div class="col-sm-4 col-md-4">{message.description}</div>
           </div>
         </div>
       </div>
     );
-  } else {
-    return form;
   }
 }
