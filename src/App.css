@@ -2,12 +2,12 @@ body {
   margin-top: 100px;
   text-align: center;
 }
-
+/* 
 .App {
   text-align: center;
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -16,10 +16,10 @@ body {
   justify-content: center;
   color: white;
 }
-
-.App-link {
+ */
+/* .App-link {
   color: #61dafb;
-}
+} */
 
 form {
   display: inline-block;

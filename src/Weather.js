@@ -29,7 +29,7 @@ export default function Weather() {
 
   let form = (
     <div className="container text-center mt-5">
-      <form className="form-inline" onSubmit={hadelSubmit}>
+      <form onSubmit={hadelSubmit}>
         <div className="row">
           <div className="col-7">
             <input
