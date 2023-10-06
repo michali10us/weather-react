@@ -7,7 +7,7 @@ function App() {
       <h1>Cheack the weather</h1>
       <Weather />
 
-      <footer className="mt-5">
+      <footer>
         This project was coded by Michal and is{" "}
         <a href="https://github.com/michali10us/weather-react">
           Open-sourced coded{" "}

@@ -66,14 +66,12 @@ export default function Weather() {
               />
             </div>
           </div>
-          <div class="row">
+          <div class="row mt-4">
             <div class="col-sm-3 col-md-4">
-              {Math.round(message.felllike)}°C
+              Fells like: {Math.round(message.felllike)}°C
             </div>
-            <div class="col-sm-3 col-md-4">Last updated:</div>
-            <div class="col-sm-3 col-md-4">
-              Feels like:{message.description}
-            </div>
+            <div class="col-sm-3 col-md-4">Update time:</div>
+            <div class="col-sm-3 col-md-4">{message.description}</div>
           </div>
         </div>
       </div>
