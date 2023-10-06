@@ -1,21 +1,35 @@
 body {
   margin-top: 100px;
   text-align: center;
+  font-family: "Chivo Mono";
+  color: #8787d8;
 }
 
 .App {
-  border: 1px solid blueviolet;
+  border: 1px solid #8787d8;
+
   padding: 40px 0;
+}
+
+h1 {
+  font-size: 50px;
 }
 
 form {
   display: inline-block;
 }
 
-.weather-img {
-  margin-top: -8px;
-}
-
 footer {
   margin-top: 100px;
+  color: rgb(103, 103, 155);
+}
+
+.first-information {
+  font-size: 28px;
+}
+
+.second-information {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
 }

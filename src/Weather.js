@@ -54,7 +54,7 @@ export default function Weather() {
       <div>
         {form}
         <div className="container text-center">
-          <div class="row mt-5">
+          <div class="row mt-5 first-information">
             <div class="col-sm-3 col-md-4"> {Math.round(message.temp)}°C</div>
             <div class="col-sm-3 col-md-4">{search}</div>
             <div className="col-sm-3 col-md-4 weather-img">
@@ -66,7 +66,7 @@ export default function Weather() {
               />
             </div>
           </div>
-          <div class="row mt-4">
+          <div class="row mt-4 second-information">
             <div class="col-sm-3 col-md-4">
               Fells like: {Math.round(message.felllike)}°C
             </div>
