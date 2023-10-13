@@ -63,7 +63,7 @@ export default function Weather() {
               />
             </div>
           </div>
-          <div class="row mt-4 second-information">
+          <div class="row mt-1 second-information">
             <div class="col-sm-4 col-md-4">
               Fells like: {Math.round(message.felllike)}°C
             </div>
