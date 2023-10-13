@@ -1,13 +1,14 @@
 body {
-  margin-top: 100px;
   text-align: center;
   font-family: "Chivo Mono";
   color: #8787d8;
+  max-width: 680px;
+  margin: 50px auto;
 }
 
 .App {
   border: 1px solid #8787d8;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 h1 {
