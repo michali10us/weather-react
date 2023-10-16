@@ -34,15 +34,18 @@ footer {
   font-size: 15px;
 }
 
+.temperature {
+  font-weight: bold;
+}
 .unit {
-  margin-left: -4px;
+  margin-left: 1px;
   font-size: 17px;
   position: relative;
-  top: -7px; /* Adjust the value as per your need */
+  top: -8px; /* Adjust the value as per your need */
 }
 
 .unitFells {
-  margin-left: -2px;
+  margin-left: 2px;
   font-size: 10px;
   position: relative;
   top: -4px; /* Adjust the value as per your need */

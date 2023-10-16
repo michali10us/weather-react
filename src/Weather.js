@@ -12,6 +12,7 @@ export default function Weather() {
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       felllike: response.data.main.feels_like,
+      time: "Monday 7:00",
     });
   }
   function hadelSubmit(event) {
@@ -54,10 +55,10 @@ export default function Weather() {
         <div className="container text-center">
           <div class="row mt-5 first-information">
             <div class="col-sm-4 col-md-4">
-              {" "}
-              {Math.round(message.temp)} <span className="unit">°C</span>
+              <span className="temperature">{Math.round(message.temp)}</span>
+              <span className="unit">°C</span>
             </div>
-            <div class="col-sm-4 col-md-4">{search}</div>
+            <div class="col-sm-4 col-md-4 text-capitalize">{search}</div>
             <div className="col-sm-4 col-md-4 weather-img">
               <img
                 src={message.icon}
@@ -69,11 +70,16 @@ export default function Weather() {
           </div>
           <div class="row mt-1 second-information">
             <div class="col-sm-4 col-md-4">
-              Fells like: {Math.round(message.felllike)}{" "}
+              <span className="temperature">
+                Fells like: {Math.round(message.felllike)}
+              </span>
+
               <span className="unitFells">°C</span>
             </div>
-            <div class="col-sm-4 col-md-4">Update time:</div>
-            <div class="col-sm-4 col-md-4">{message.description}</div>
+            <div class="col-sm-4 col-md-4">Update time: {message.time}</div>
+            <div class="col-sm-4 col-md-4 text-capitalize">
+              {message.description}
+            </div>
           </div>
         </div>
       </div>
