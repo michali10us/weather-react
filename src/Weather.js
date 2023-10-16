@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import Friendlydate from "./Friendlydate";
 import "./App.css";
 
 export default function Weather() {
@@ -12,7 +13,7 @@ export default function Weather() {
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       felllike: response.data.main.feels_like,
-      time: "Monday 7:00",
+      date: new Date(response.data.dt * 1000),
     });
   }
   function hadelSubmit(event) {
@@ -76,8 +77,11 @@ export default function Weather() {
 
               <span className="unitFells">°C</span>
             </div>
-            <div class="col-sm-4 col-md-4">Update time: {message.time}</div>
-            <div class="col-sm-4 col-md-4 text-capitalize">
+            <div class="col-sm-4 col-md-4">
+              Update time:
+              <Friendlydate date={message.date} />
+            </div>
+            <div className="col-sm-4 col-md-4 text-capitalize">
               {message.description}
             </div>
           </div>
