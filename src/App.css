@@ -21,9 +21,7 @@ form {
 
 footer {
   color: rgb(103, 103, 155);
-  margin-top: 60px;
-  margin-left: -240px;
-  padding-bottom: 0;
+  margin: 40px 0 -10px;
 }
 
 .first-information {
@@ -34,4 +32,18 @@ footer {
   color: black;
   font-weight: bold;
   font-size: 15px;
+}
+
+.unit {
+  margin-left: -4px;
+  font-size: 17px;
+  position: relative;
+  top: -7px; /* Adjust the value as per your need */
+}
+
+.unitFells {
+  margin-left: -2px;
+  font-size: 10px;
+  position: relative;
+  top: -4px; /* Adjust the value as per your need */
 }

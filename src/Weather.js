@@ -34,6 +34,7 @@ export default function Weather() {
               className="form-control"
               placeholder="Search a city"
               onChange={handelChange}
+              autoFocus="on"
             />
           </div>
           <div className="col-5">
@@ -52,12 +53,15 @@ export default function Weather() {
         {form}
         <div className="container text-center">
           <div class="row mt-5 first-information">
-            <div class="col-sm-4 col-md-4"> {Math.round(message.temp)}°C</div>
+            <div class="col-sm-4 col-md-4">
+              {" "}
+              {Math.round(message.temp)} <span className="unit">°C</span>
+            </div>
             <div class="col-sm-4 col-md-4">{search}</div>
             <div className="col-sm-4 col-md-4 weather-img">
               <img
                 src={message.icon}
-                width="50"
+                /* width="20" */
                 height="50"
                 alt="Weather icon"
               />
@@ -65,7 +69,8 @@ export default function Weather() {
           </div>
           <div class="row mt-1 second-information">
             <div class="col-sm-4 col-md-4">
-              Fells like: {Math.round(message.felllike)}°C
+              Fells like: {Math.round(message.felllike)}{" "}
+              <span className="unitFells">°C</span>
             </div>
             <div class="col-sm-4 col-md-4">Update time:</div>
             <div class="col-sm-4 col-md-4">{message.description}</div>
