@@ -1,5 +1,6 @@
 import React from "react";
 import Friendlydate from "./Friendlydate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WheatherInfo(props) {
   return (
@@ -10,13 +11,9 @@ export default function WheatherInfo(props) {
           <span className="unit">°C</span>
         </div>
         <div class="col-sm-4 col-md-4 text-capitalize">{props.info.city}</div>
-        <div className="col-sm-4 col-md-4 weather-img">
-          <img
-            src={props.info.icon}
-            /* width="20" */
-            height="50"
-            alt="Weather icon"
-          />
+
+        <div className="col-sm-4 col-md-4 mt-2 weather-img">
+          <WeatherIcon code={props.info.icon} />
         </div>
       </div>
       <div class="row mt-1 second-information">

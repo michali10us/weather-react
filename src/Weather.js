@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-/* import Friendlydate from "./Friendlydate"; */
 import WheatherInfo from "./WheatherInfo";
 import "./App.css";
 
@@ -12,7 +11,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       temp: response.data.main.temp,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       felllike: response.data.main.feels_like,
       date: new Date(response.data.dt * 1000),
