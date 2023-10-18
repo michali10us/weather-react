@@ -1,14 +1,16 @@
 import React from "react";
 import Friendlydate from "./Friendlydate";
 import WeatherIcon from "./WeatherIcon";
+import WheatherTemp from "./WheatherTemp";
 
 export default function WheatherInfo(props) {
   return (
     <div className="container WheatherInfo text-center">
       <div class="row mt-5 first-information">
         <div class="col-sm-4 col-md-4">
-          <span className="temperature">{Math.round(props.info.temp)}</span>
-          <span className="unit">°C</span>
+          <WheatherTemp temperature={props.info.temp} />
+          {/*   <span className="temperature">{Math.round(props.info.temp)}</span>
+          <span className="unit">°C</span> */}
         </div>
         <div class="col-sm-4 col-md-4 text-capitalize">{props.info.city}</div>
 
