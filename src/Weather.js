@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Friendlydate from "./Friendlydate";
+/* import Friendlydate from "./Friendlydate"; */
+import WheatherInfo from "./WheatherInfo";
 import "./App.css";
 
 export default function Weather(props) {
@@ -15,6 +16,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       felllike: response.data.main.feels_like,
       date: new Date(response.data.dt * 1000),
+      city: response.data.name,
     });
   }
 
@@ -60,40 +62,7 @@ export default function Weather(props) {
     return (
       <div>
         {form}
-        <div className="container text-center">
-          <div class="row mt-5 first-information">
-            <div class="col-sm-4 col-md-4">
-              <span className="temperature">
-                {Math.round(weatherData.temp)}
-              </span>
-              <span className="unit">°C</span>
-            </div>
-            <div class="col-sm-4 col-md-4 text-capitalize">{city}</div>
-            <div className="col-sm-4 col-md-4 weather-img">
-              <img
-                src={weatherData.icon}
-                /* width="20" */
-                height="50"
-                alt="Weather icon"
-              />
-            </div>
-          </div>
-          <div class="row mt-1 second-information">
-            <div class="col-sm-4 col-md-4">
-              <span className="temperature">
-                Fells like: {Math.round(weatherData.felllike)}
-              </span>
-
-              <span className="unitFells">°C</span>
-            </div>
-            <div class="col-sm-4 col-md-4">
-              <Friendlydate date={weatherData.date} />
-            </div>
-            <div className="col-sm-4 col-md-4 text-capitalize">
-              {weatherData.description}
-            </div>
-          </div>
-        </div>
+        <WheatherInfo info={weatherData} />
       </div>
     );
   } else {
