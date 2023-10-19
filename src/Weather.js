@@ -50,7 +50,7 @@ export default function Weather(props) {
           </div>
           <div className="col-5">
             <button type="submit" className="btn btn-primary">
-              Current location
+              Search location
             </button>
           </div>
         </div>
