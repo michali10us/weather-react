@@ -6,18 +6,20 @@ import WheatherTemp from "./WheatherTemp";
 export default function WheatherInfo(props) {
   return (
     <div className="container WheatherInfo text-center">
-      <div class="row mt-5 first-information">
-        <div class="col-sm-4 col-md-4">
+      <div className="row mt-5 first-information">
+        <div className="col-sm-4 col-md-4">
           <WheatherTemp celsius={props.info.temp} />
         </div>
-        <div class="col-sm-4 col-md-4 text-capitalize">{props.info.city}</div>
+        <div className="col-sm-4 col-md-4 text-capitalize">
+          {props.info.city}
+        </div>
 
         <div className="col-sm-4 col-md-4 mt-2 weather-img">
           <WeatherIcon code={props.info.icon} />
         </div>
       </div>
-      <div class="row mt-1 second-information">
-        <div class="col-sm-4 col-md-4">
+      <div className="row mt-1 second-information">
+        <div className="col-sm-4 col-md-4">
           <span className="temperature">
             Fells like: {Math.round(props.info.felllike)}
           </span>
