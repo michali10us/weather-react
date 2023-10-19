@@ -8,9 +8,7 @@ export default function WheatherInfo(props) {
     <div className="container WheatherInfo text-center">
       <div class="row mt-5 first-information">
         <div class="col-sm-4 col-md-4">
-          <WheatherTemp temperature={props.info.temp} />
-          {/*   <span className="temperature">{Math.round(props.info.temp)}</span>
-          <span className="unit">°C</span> */}
+          <WheatherTemp celsius={props.info.temp} />
         </div>
         <div class="col-sm-4 col-md-4 text-capitalize">{props.info.city}</div>
 

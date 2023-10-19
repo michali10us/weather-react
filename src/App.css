@@ -37,22 +37,9 @@ footer {
 .temperature {
   font-weight: bold;
 }
-.unit,
-.unitCel,
-.unitFer {
-  margin-left: 1px;
+.unit {
+  margin-left: 4px;
   font-size: 12px;
   position: relative;
   top: -10px; /* Adjust the value as per your need */
-}
-
-.unitCel {
-  margin-left: 3px;
-}
-
-.unitFells {
-  margin-left: 2px;
-  font-size: 10px;
-  position: relative;
-  top: -4px; /* Adjust the value as per your need */
 }
