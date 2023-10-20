@@ -2,7 +2,7 @@ import React from "react";
 import "./Forcast.css";
 import WeatherIcon from "./WeatherIcon";
 
-export default function () {
+export default function Forcast() {
   return (
     <div className="container Forcast">
       <div className="row">
