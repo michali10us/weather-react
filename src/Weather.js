@@ -10,6 +10,7 @@ export default function Weather(props) {
 
   function showWeather(response) {
     setWeatherData({
+      coord: response.data.coord,
       ready: true,
       temp: response.data.main.temp,
       icon: response.data.weather[0].icon,
@@ -64,7 +65,7 @@ export default function Weather(props) {
         {form}
         <WheatherInfo info={weatherData} />
         <div className="Forcast mt-3">
-          <Forcast />
+          <Forcast coordinate={weatherData.coord} />
         </div>
       </div>
     );
