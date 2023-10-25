@@ -20,7 +20,7 @@ export default function Forcast(property) {
           <div className="col">
             <div className="forcast-day">{forecast[0].time}</div>
             <div>
-              <WeatherIcon code={"50d"} />
+              <WeatherIcon code={forecast[0].condition.icon} />
             </div>
             <div>
               <span className="forcast-minTemp">
