@@ -26,6 +26,8 @@ export default function Forcast(property) {
                   <ForcastDaily dailyData={forecastDaily} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
