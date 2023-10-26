@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Forcast.css";
-import WeatherIcon from "./WeatherIcon";
+import ForcastDaily from "./ForcastDaily";
 import axios from "axios";
 
 export default function Forcast(property) {
@@ -11,34 +11,26 @@ export default function Forcast(property) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
+  useEffect(() => {
+    setLoaded(false);
+  }, [property.coordinate]);
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="container Forcast">
         <div className="row">
           <div className="col">
-            <div className="forcast-day">{forecast[0].time}</div>
-            <div>
-              <WeatherIcon code={forecast[0].condition.icon} />
-            </div>
-            <div>
-              <span className="forcast-minTemp">
-                {forecast[0].temperature.minimum}
-              </span>
-              <span className="forcast-maxTemp">
-                {forecast[0].temperature.maximum}
-              </span>
-            </div>
+            <ForcastDaily dailyData={forecast[0]} />
           </div>
         </div>
       </div>
     );
   } else {
-    let apiKey = "bd64o304c00cb1336373a57ft8094a9d";
+    let apiKey = "1a2b7258ebd456c01aef9175dfe8b709";
+
     let longitude = property.coordinate.lon;
     let latitude = property.coordinate.lat;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(hadelRequest);
 
     return null;
