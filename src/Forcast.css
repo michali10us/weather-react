@@ -6,3 +6,11 @@
 .forcast-day {
   margin-bottom: 4px;
 }
+
+.forcast-minTemp {
+  color: black;
+}
+
+.forcast-maxTemp {
+  color: black;
+}
